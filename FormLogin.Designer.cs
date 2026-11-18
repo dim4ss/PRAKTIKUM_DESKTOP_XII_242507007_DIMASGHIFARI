@@ -31,11 +31,11 @@
             this.textuser = new System.Windows.Forms.TextBox();
             this.labeluser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labeljudul = new System.Windows.Forms.Label();
-            this.labelpw = new System.Windows.Forms.Label();
-            this.textpw = new System.Windows.Forms.TextBox();
-            this.butlogin = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.butlogin = new System.Windows.Forms.Button();
+            this.textpw = new System.Windows.Forms.TextBox();
+            this.labelpw = new System.Windows.Forms.Label();
+            this.labeljudul = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,33 +71,17 @@
             this.panel1.Size = new System.Drawing.Size(267, 305);
             this.panel1.TabIndex = 2;
             // 
-            // labeljudul
+            // linkLabel1
             // 
-            this.labeljudul.AutoSize = true;
-            this.labeljudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeljudul.ForeColor = System.Drawing.SystemColors.Control;
-            this.labeljudul.Location = new System.Drawing.Point(74, 12);
-            this.labeljudul.Name = "labeljudul";
-            this.labeljudul.Size = new System.Drawing.Size(92, 29);
-            this.labeljudul.TabIndex = 2;
-            this.labeljudul.Text = "LOGIN";
-            // 
-            // labelpw
-            // 
-            this.labelpw.AutoSize = true;
-            this.labelpw.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelpw.Location = new System.Drawing.Point(16, 141);
-            this.labelpw.Name = "labelpw";
-            this.labelpw.Size = new System.Drawing.Size(92, 24);
-            this.labelpw.TabIndex = 3;
-            this.labelpw.Text = "Password";
-            // 
-            // textpw
-            // 
-            this.textpw.Location = new System.Drawing.Point(20, 168);
-            this.textpw.Name = "textpw";
-            this.textpw.Size = new System.Drawing.Size(192, 20);
-            this.textpw.TabIndex = 4;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(152, 215);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(60, 20);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Daftar";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // butlogin
             // 
@@ -109,24 +93,43 @@
             this.butlogin.UseVisualStyleBackColor = true;
             this.butlogin.Click += new System.EventHandler(this.butlogin_Click);
             // 
-            // linkLabel1
+            // textpw
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(152, 215);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(60, 20);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Daftar";
+            this.textpw.Location = new System.Drawing.Point(20, 168);
+            this.textpw.Name = "textpw";
+            this.textpw.PasswordChar = '*';
+            this.textpw.Size = new System.Drawing.Size(192, 20);
+            this.textpw.TabIndex = 4;
+            // 
+            // labelpw
+            // 
+            this.labelpw.AutoSize = true;
+            this.labelpw.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelpw.Location = new System.Drawing.Point(16, 141);
+            this.labelpw.Name = "labelpw";
+            this.labelpw.Size = new System.Drawing.Size(92, 24);
+            this.labelpw.TabIndex = 3;
+            this.labelpw.Text = "Password";
+            // 
+            // labeljudul
+            // 
+            this.labeljudul.AutoSize = true;
+            this.labeljudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeljudul.ForeColor = System.Drawing.SystemColors.Control;
+            this.labeljudul.Location = new System.Drawing.Point(74, 12);
+            this.labeljudul.Name = "labeljudul";
+            this.labeljudul.Size = new System.Drawing.Size(92, 29);
+            this.labeljudul.TabIndex = 2;
+            this.labeljudul.Text = "LOGIN";
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(307, 340);
             this.Controls.Add(this.panel1);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

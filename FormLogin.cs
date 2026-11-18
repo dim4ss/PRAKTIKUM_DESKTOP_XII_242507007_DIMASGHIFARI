@@ -17,11 +17,54 @@ namespace PRAKTIKUM_DESKTOP_XII_242507007_DIMASGHIFARI
         {
             InitializeComponent();
         }
-        string konfigurasi = "server=localhost;database=db_apotek_petugas;uid=root;pwd=;";
+        string konfigurasi = "server=localhost;database=db_apotek_petugas;username=root;password=;";
 
         private void butlogin_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM tb_apoteker WHERE username = '" + textuser.Text + "' AND password = '" + textpw.Text + "'", new MySqlConnection(konfigurasi));
+            MySqlConnection conn = new MySqlConnection(konfigurasi);
+            try {
+                conn.Open();
+                string query = "SELECT * FROM tb_apoteker WHERE username = @username AND password = @password";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", textuser.Text);
+                cmd.Parameters.AddWithValue("@password", textpw.Text);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    MessageBox.Show("Login berhasil!");
+                    formDashboard pindah1= new formDashboard();
+                    pindah1.FormClosed += Pindah1_FormClosed;
+                    pindah1.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Username atau password salah!");
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void Pindah1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormRegister pindah2 = new FormRegister();
+            pindah2.FormClosed += Pindah2_FormClosed; ;
+            pindah2.Show();
+            this.Hide();
+        }
+
+        private void Pindah2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

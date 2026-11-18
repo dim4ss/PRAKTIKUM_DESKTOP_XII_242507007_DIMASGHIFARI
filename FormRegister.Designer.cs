@@ -29,37 +29,37 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.butlogin = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.butdaftar = new System.Windows.Forms.Button();
+            this.cmbrole = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.textpw = new System.Windows.Forms.TextBox();
             this.labelpw = new System.Windows.Forms.Label();
             this.labeljudul = new System.Windows.Forms.Label();
             this.textuser = new System.Windows.Forms.TextBox();
             this.labeluser = new System.Windows.Forms.Label();
+            this.textkonfirpw = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textnamapetugas = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cmbshift = new System.Windows.Forms.ComboBox();
+            this.labelshift = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.butlogin);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.cmbshift);
+            this.panel1.Controls.Add(this.labelshift);
+            this.panel1.Controls.Add(this.textnamapetugas);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textkonfirpw);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.butdaftar);
+            this.panel1.Controls.Add(this.cmbrole);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textpw);
             this.panel1.Controls.Add(this.labelpw);
             this.panel1.Controls.Add(this.labeljudul);
@@ -70,19 +70,56 @@
             this.panel1.Size = new System.Drawing.Size(267, 426);
             this.panel1.TabIndex = 3;
             // 
-            // butlogin
+            // linkLabel1
             // 
-            this.butlogin.Location = new System.Drawing.Point(20, 379);
-            this.butlogin.Name = "butlogin";
-            this.butlogin.Size = new System.Drawing.Size(75, 33);
-            this.butlogin.TabIndex = 3;
-            this.butlogin.Text = "DAFTAR";
-            this.butlogin.UseVisualStyleBackColor = true;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(147, 387);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(53, 20);
+            this.linkLabel1.TabIndex = 10;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Login";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // butdaftar
+            // 
+            this.butdaftar.Location = new System.Drawing.Point(20, 387);
+            this.butdaftar.Name = "butdaftar";
+            this.butdaftar.Size = new System.Drawing.Size(75, 33);
+            this.butdaftar.TabIndex = 3;
+            this.butdaftar.Text = "DAFTAR";
+            this.butdaftar.UseVisualStyleBackColor = true;
+            this.butdaftar.Click += new System.EventHandler(this.butdaftar_Click);
+            // 
+            // cmbrole
+            // 
+            this.cmbrole.FormattingEnabled = true;
+            this.cmbrole.Items.AddRange(new object[] {
+            "Apoteker",
+            "Asisten Apoteker",
+            "Kasir Apoteker"});
+            this.cmbrole.Location = new System.Drawing.Point(20, 335);
+            this.cmbrole.Name = "cmbrole";
+            this.cmbrole.Size = new System.Drawing.Size(192, 21);
+            this.cmbrole.TabIndex = 13;
+            this.cmbrole.SelectedIndexChanged += new System.EventHandler(this.cmbrole_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 308);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 24);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Role";
             // 
             // textpw
             // 
-            this.textpw.Location = new System.Drawing.Point(20, 127);
+            this.textpw.Location = new System.Drawing.Point(20, 123);
             this.textpw.Name = "textpw";
+            this.textpw.PasswordChar = '*';
             this.textpw.Size = new System.Drawing.Size(192, 20);
             this.textpw.TabIndex = 4;
             // 
@@ -90,7 +127,7 @@
             // 
             this.labelpw.AutoSize = true;
             this.labelpw.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelpw.Location = new System.Drawing.Point(16, 100);
+            this.labelpw.Location = new System.Drawing.Point(16, 96);
             this.labelpw.Name = "labelpw";
             this.labelpw.Size = new System.Drawing.Size(92, 24);
             this.labelpw.TabIndex = 3;
@@ -124,95 +161,73 @@
             this.labeluser.TabIndex = 1;
             this.labeluser.Text = "Username";
             // 
+            // textkonfirpw
+            // 
+            this.textkonfirpw.Location = new System.Drawing.Point(20, 174);
+            this.textkonfirpw.Name = "textkonfirpw";
+            this.textkonfirpw.PasswordChar = '*';
+            this.textkonfirpw.Size = new System.Drawing.Size(192, 20);
+            this.textkonfirpw.TabIndex = 15;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 154);
+            this.label1.Location = new System.Drawing.Point(16, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 24);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 14;
             this.label1.Text = "Konfirmasi Password";
+            // 
+            // textnamapetugas
+            // 
+            this.textnamapetugas.Location = new System.Drawing.Point(20, 225);
+            this.textnamapetugas.Name = "textnamapetugas";
+            this.textnamapetugas.Size = new System.Drawing.Size(192, 20);
+            this.textnamapetugas.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 211);
+            this.label2.Location = new System.Drawing.Point(16, 198);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 24);
-            this.label2.TabIndex = 7;
+            this.label2.TabIndex = 16;
             this.label2.Text = "Nama Petugas";
             // 
-            // comboBox2
+            // cmbshift
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(20, 289);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(192, 21);
-            this.comboBox2.TabIndex = 9;
+            this.cmbshift.FormattingEnabled = true;
+            this.cmbshift.Items.AddRange(new object[] {
+            "Pagi",
+            "Siang",
+            "malam"});
+            this.cmbshift.Location = new System.Drawing.Point(20, 279);
+            this.cmbshift.Name = "cmbshift";
+            this.cmbshift.Size = new System.Drawing.Size(192, 21);
+            this.cmbshift.TabIndex = 19;
             // 
-            // linkLabel1
+            // labelshift
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(147, 392);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(53, 20);
-            this.linkLabel1.TabIndex = 10;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Login";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(20, 352);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(192, 21);
-            this.comboBox3.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 325);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 24);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Role";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 262);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 24);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Shift";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(20, 181);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
-            this.textBox1.TabIndex = 14;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(20, 236);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 20);
-            this.textBox2.TabIndex = 15;
+            this.labelshift.AutoSize = true;
+            this.labelshift.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelshift.Location = new System.Drawing.Point(16, 252);
+            this.labelshift.Name = "labelshift";
+            this.labelshift.Size = new System.Drawing.Size(45, 24);
+            this.labelshift.TabIndex = 18;
+            this.labelshift.Text = "Shift";
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(287, 450);
             this.Controls.Add(this.panel1);
             this.Name = "FormRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegister";
+            this.Load += new System.EventHandler(this.FormRegister_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -222,20 +237,20 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button butlogin;
+        private System.Windows.Forms.Button butdaftar;
         private System.Windows.Forms.TextBox textpw;
         private System.Windows.Forms.Label labelpw;
         private System.Windows.Forms.Label labeljudul;
         private System.Windows.Forms.TextBox textuser;
         private System.Windows.Forms.Label labeluser;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbrole;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textkonfirpw;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textnamapetugas;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbshift;
+        private System.Windows.Forms.Label labelshift;
     }
 }
